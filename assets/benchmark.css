@@ -35,11 +35,14 @@ section > div > div {
 button {
   font-size: inherit;
   font-family: inherit;
-  background-color: #1d0f352b;
+  background-color: #1d0f3552;
   color: white;
-  border: 3px solid white;
+  border-top: 2px outset whitesmoke;
+  border-left: 2px outset whitesmoke;
+  border-right: 0px transparent;
+  border-bottom: 0px transparent;
   border-radius: 50px;
-  box-shadow: 1px 1px 1px 1px;
+  box-shadow: inset 0px 0px 200px -150px;
   padding: 30px;
   width: 400px;
 }
