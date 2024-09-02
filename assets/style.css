@@ -7,11 +7,11 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   background-image: url(./bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   padding: 30px 60px;
   color: white;
   font-family: "Inter", sans-serif;
@@ -37,13 +37,10 @@ body div img {
 }
 
 .light-blue {
-  color: #00ffff;
+  background-color: #00ffff;
 }
 
 button {
   font-family: inherit;
-  text-transform: uppercase;
-  padding-inline: 32px;
-  padding-block: 24px;
   border: 1px solid transparent;
 }
