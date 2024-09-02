@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 60px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 60px;
+}
+
+body div img {
+  width: 200px;
+}
+
+.violet {
+  color: #900080;
+}
+
+.light-violet {
+  color: #d20094;
+}
+
+.light-blue {
+  color: #00ffff;
+}
+
+button {
+  font-family: inherit;
+  text-transform: uppercase;
+  padding-inline: 32px;
+  padding-block: 24px;
+  border: 1px solid transparent;
+}
