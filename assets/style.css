@@ -42,8 +42,5 @@ body div img {
 
 button {
   font-family: inherit;
-  text-transform: uppercase;
-  padding-inline: 32px;
-  padding-block: 24px;
   border: 1px solid transparent;
 }
