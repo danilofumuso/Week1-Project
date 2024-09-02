@@ -18,13 +18,31 @@ body {
   font-size: 16px;
 }
 
+main {
+  text-align: center;
+}
+
 h1 {
   font-family: "Outfit", sans-serif;
   font-size: 60px;
+  padding-top: 80px;
+}
+
+main p {
+  padding-top: 15px;
+  padding-bottom: 25px;
 }
 
 body div img {
   width: 200px;
+}
+
+main div img {
+  width: 50px;
+}
+
+main div img:not(:last-child) {
+  margin-right: 10px;
 }
 
 .violet {
