@@ -1,0 +1,120 @@
+h1 span {
+  font-weight: 700;
+}
+#h1-WelcomeTitle {
+  margin-top: 5rem;
+}
+
+body {
+  font-size: 18px;
+  padding: 35px 100px;
+  font-weight: 300;
+}
+h1 {
+  font-size: 80px;
+}
+
+#h1-WelcomeTitleConteiner {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+div h1 {
+  line-height: 44px;
+}
+div h2 {
+  margin-bottom: 0.8rem;
+}
+div p {
+  margin-bottom: 3rem;
+}
+
+.instruction-list {
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.8rem;
+}
+
+.container {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 15px;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: solid;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #00ffff;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+.checkmark:after {
+  content: " ";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 5px;
+  top: 0px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.checkBox-btn-conteiner {
+  margin-top: 5rem;
+}
+.welcome-btn {
+  margin-left: 15rem;
+  cursor: pointer;
+  padding-inline: 60px;
+  padding-block: 15px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.illuminated {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3), 0 0 45px rgba(0, 255, 255, 0.2);
+}
