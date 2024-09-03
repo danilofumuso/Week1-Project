@@ -18,63 +18,37 @@
                 <div class="correct">
                     <p class="WrongCorrect">Correct</p>
                     <p class="perc">66.7%</p>
-                    <p>4/6 questions</p>
+                    <p class="questions">4/6 questions</p>
                 </div>
                 <div class="results">
-                    <div class="donut"></div>
-                    <!--  <canvas id="canvas"></canvas> -->
+                    <div class="text">
+                        <h5>Congratulations!</h5>
+                        <h5 class="test_cyan">You passed the exam.</h5>
+                        <p>We'll send you a certificate in few minutes. <br />Check your email (including promotion / spam folder)</p>
+                    </div>
+                    <svg width="370" height="370" viewBox="5 5 40 40" style="position: relative">
+                        <circle cx="25" cy="25" r="15.515" fill="none" stroke="#C2128D" stroke-width="5.5" />
+                        <circle
+                            cx="25"
+                            cy="25"
+                            r="15.515"
+                            fill="none"
+                            stroke="#00FFFF"
+                            stroke-width="5.5"
+                            stroke-dasharray="66.7, 33.3"
+                            stroke-dashoffset="-6.5"
+                        />
+                    </svg>
                 </div>
                 <div class="wrong">
                     <p class="WrongCorrect">Wrong</p>
                     <p class="perc">33.3%</p>
-                    <p>2/6 questions</p>
+                    <p class="questions">2/6 questions</p>
                 </div>
             </div>
-            <div>
+            <div class="button_conteiner">
                 <button class="button_style">rate us</button>
             </div>
         </main>
-        <script>
-            /* // Configura il canvas e il contesto 2D
-            const canvas = document.getElementById("canvas");
-            const ctx = canvas.getContext("2d");
-
-            // Imposta le dimensioni del canvas
-            canvas.width = 350; // Larghezza della ciambella
-            canvas.height = 350; // Altezza della ciambella
-
-            // Colore di sfondo del div (ciambella)
-            ctx.fillStyle = "rgba(46, 42, 92, 1)"; // Colore di sfondo simile al div
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            //il primo 0 si riferisce a: Coordinata sull'asse x del punto iniziale del nostro rettangolo.
-            // il secondo 0 si riferisce a: Coordinata sull'asse y del punto iniziale del rettangolo.
-
-            // Crea il grafico a torta (donut chart)
-            // Segmento verde
-            ctx.beginPath();
-            ctx.moveTo(canvas.width / 2, canvas.height / 2);
-            ctx.arc(canvas.width / 2, canvas.height / 2, 175, 0, Math.PI * 2 * 0.667, false); // 66.7% verde
-            ctx.closePath();
-            ctx.fillStyle = "#00FFFF";
-            ctx.fill();
-
-            // Segmento rosa
-            ctx.beginPath();
-            ctx.moveTo(canvas.width / 2, canvas.height / 2);
-            // inizio del sottopercorso
-            ctx.arc(canvas.width / 2, canvas.height / 2, 175, Math.PI * 2 * 0.667, Math.PI * 2, false); // 33.3% rosa
-            ctx.closePath();
-            ctx.fillStyle = "#C2128D";
-            ctx.fill();
-
-            // Crea il buco centrale
-            ctx.globalCompositeOperation = "destination-out";
-            ctx.beginPath();
-            ctx.arc(canvas.width / 2, canvas.height / 2, 120, 0, Math.PI * 2, false); // Crea un buco circolare di 240px
-            ctx.fill();
-
-            // Ripristina l'operazione di composizione
-            ctx.globalCompositeOperation = "source-over"; */
-        </script>
     </body>
 </html>

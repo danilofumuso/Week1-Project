@@ -12,7 +12,6 @@
 }
 .button_style{
     display: block;
-    margin: 0 auto;
     border: 2px solid white;
     background-color: transparent;
     color: white;
@@ -20,7 +19,7 @@
     font-weight: 600;
     padding-inline: 68px;
     padding-block: 16px;
-    margin-top: 62px;
+    margin-top: 16px;
 
 }
 .container_results{
@@ -39,7 +38,8 @@
     justify-content: center;
 }
 .results{
-    padding-inline: 120px;
+    padding-inline: 100px;
+    position: relative;
 }
 .wrong{
     height: 50px;
@@ -47,25 +47,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-.donut {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background: conic-gradient(#C2128D 130deg,  #00FFFF 130deg 300deg);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-}
-.donut::before {
-    content: '';
-    width: 240px;
-    height: 240px;
-    background-color: #2e2a5c;
-    border-radius: 50%;
-    position: absolute;
 }
 .perc {
     font-size: 60px;
@@ -76,10 +57,30 @@
     line-height: 1;
     font-weight: 300;
 }
-/* ---------------------------- canvas ------------------------------ */
-canvas{
-    border-radius: 50%; /* Forma circolare */
-    -webkit-box-shadow: 0px 0px 17px 8px rgba(0,0,0,0.25); 
-    box-shadow: 0px 0px 17px 8px rgba(0,0,0,0.25);
-} 
-/* ---------------------------- canvas ------------------------------ */
+.questions{
+    font-size: 20px;
+    font-weight: 200;
+}
+.button_conteiner{
+    display: flex;
+    justify-content: center;
+}
+.text{
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    text-align: center;
+    left: 200px;
+    top: 120px;
+}
+.text p{
+    font-size: 12px;
+    margin-top: 20px;
+    font-weight: 200;
+}
+.text h5{
+    font-size: 16px;
+}
+.test_cyan{
+    color:#00FFFF;
+}
