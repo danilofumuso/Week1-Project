@@ -22,13 +22,14 @@ main p {
 .star {
   width: 65px;
   cursor: pointer;
-}
-
-.star path {
   fill: rgb(19 26 93);
 }
 
-.star.selected path {
+/* .star:hover {
+  fill: #00ffff;
+} */
+
+.star.selected {
   fill: #00ffff;
 }
 
