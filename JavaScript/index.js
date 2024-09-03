@@ -28,5 +28,20 @@ for (let i = 0; i < stars.length; i++) {
 }
 
 window.onload = function () {
-  document.getElementById("prova").value = "";
+  document.getElementById("comment").value = "";
+};
+
+const input = document.getElementById("comment");
+
+function redirectToEpicode() {
+  window.location.href = "https://epicode.com/it/";
+}
+
+const button = document.getElementById("info");
+button.onclick = function () {
+  if (input.value !== "" && condition) {
+    redirectToEpicode();
+  } else {
+    alert("Please select a rating and enter a comment");
+  }
 };
