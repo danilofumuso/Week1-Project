@@ -20,19 +20,19 @@ h1 span {
 }
 
 section {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 section > div {
-  display: inline-block;
-}
-
-section > div > div {
   padding-inline: 20px;
   padding-block: 10px;
+  width: 900px;
+  margin: 0 auto;
 }
 
 button {
+  margin-inline: 20px;
+  margin-block: 10px;
   font-size: inherit;
   font-family: inherit;
   background-color: #1d0f3552;
@@ -44,10 +44,17 @@ button {
   border-radius: 50px;
   box-shadow: inset 0px 0px 200px -150px;
   padding: 30px;
-  width: 400px;
+  width: 45%;
 }
 
-section + div {
-  padding-top: 150px;
+.buttonHover:hover {
+  background-color: #d20094;
+  cursor: pointer;
+}
+
+#footer {
+  padding-top: 80px;
   letter-spacing: 2px;
+  font-family: inherit;
+  font-weight: 500;
 }
