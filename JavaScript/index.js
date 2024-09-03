@@ -1,54 +1,32 @@
-// const stars = document.querySelectorAll(".star");
-
-// stars.forEach((star, index) => {
-//   star.addEventListener("mouseover", () => {
-//     stars.forEach((s, i) => {
-//       if (i <= index) {
-//         s.classList.add("selected");
-//       } else {
-//         s.classList.remove("selected");
-//       }
-//     });
-//   });
-
-//   star.addEventListener("mouseout", () => {
-//     stars.forEach((s) => {
-//       s.classList.remove("selected");
-//     });
-//   });
-// });
-
 const stars = document.querySelectorAll(".star");
 
-let currentLitIndex = -1;
+let condition = false;
 
-stars.forEach((star, index) => {
-  star.addEventListener("mouseover", () => {
-    stars.forEach((s, i) => {
-      if (i <= index) {
-        s.classList.add("selected");
-      } else {
-        s.classList.remove("selected");
+for (let i = 0; i < stars.length; i++) {
+  stars[i].addEventListener("mouseover", function () {
+    for (let y = 0; y <= i; y++) {
+      if (condition === false) {
+        stars[y].classList.add("selected");
       }
-    });
-  });
-
-  star.addEventListener("mouseout", () => {
-    if (index > currentselectedIndex) {
-      stars.forEach((s) => {
-        s.classList.remove("selected");
-      });
     }
   });
-
-  star.addEventListener("click", () => {
-    currentselectedIndex = index;
-    stars.forEach((s, i) => {
-      if (i <= currentselectedIndex) {
-        s.classList.add("selected");
-      } else {
-        s.classList.remove("selected");
+  stars[i].addEventListener("mouseout", function () {
+    for (let i = 0; i < stars.length; i++) {
+      if (condition === false) {
+        stars[i].classList.remove("selected");
       }
-    });
+    }
   });
-});
+  stars[i].addEventListener("click", function () {
+    for (let z = 0; z <= i; z++) {
+      stars[z].classList.add("selected");
+    }
+    if (condition === false) {
+      condition = true;
+    } else condition = false;
+  });
+}
+
+window.onload = function () {
+  document.getElementById("prova").value = "";
+};
