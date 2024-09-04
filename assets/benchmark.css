@@ -1,0 +1,119 @@
+main {
+  text-align: center;
+}
+
+header > div:nth-child(1) {
+  display: inline-block;
+}
+
+header > div + div {
+  text-align: right;
+}
+
+main > div:nth-child(1) {
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+h1 span {
+  font-weight: 700;
+}
+
+section {
+  padding-top: 10px;
+}
+
+section > div {
+  padding-inline: 20px;
+  padding-block: 10px;
+  width: 900px;
+  margin: 0 auto;
+}
+
+button {
+  margin-inline: 20px;
+  margin-block: 10px;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: #1d0f3552;
+  color: white;
+  border-top: 2px outset whitesmoke;
+  border-left: 2px outset whitesmoke;
+  border-right: 0px transparent;
+  border-bottom: 0px transparent;
+  border-radius: 50px;
+  box-shadow: inset 0px 0px 200px -150px;
+  padding: 30px;
+  width: 45%;
+}
+
+.buttonHover:hover {
+  background-color: #d20094;
+  cursor: pointer;
+}
+
+#footer {
+  padding-top: 80px;
+  letter-spacing: 2px;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.svg-container {
+  position: relative;
+  width: 100%;
+  height: 13vh;
+}
+
+.timer {
+  width: 100%;
+  height: 11vh;
+}
+
+.circle-svg {
+  position: absolute;
+  bottom: 29px;
+  right: -15px;
+  transform: rotate(-90deg);
+}
+
+.bg-circle {
+  fill: none;
+  stroke: #b89ebe;
+  stroke-width: 15;
+}
+
+.progress-circle {
+  fill: none;
+  stroke: #00ffff;
+  stroke-width: 15;
+  stroke-linecap: round;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.time {
+  position: absolute;
+  top: 19px;
+  right: 72px;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 8px;
+  width: 44px;
+}
+
+#seconds {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: inherit;
+}
