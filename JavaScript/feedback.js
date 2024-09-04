@@ -1,5 +1,3 @@
-let value = localStorage.getItem("difficulty");
-
 const stars = document.querySelectorAll(".star");
 
 let condition = false;

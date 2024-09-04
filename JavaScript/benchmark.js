@@ -1,3 +1,5 @@
+let value = localStorage.getItem("difficulty");
+
 const easy = [
     {
         type: "multiple",
@@ -337,7 +339,7 @@ const quiz = function (index) {
                     questionIndex++;
                     quiz(questionIndex);
                 } else {
-                    console.log("passeremo ad un altra pagina");
+                    window.location.href = "resultPage.html";
                     return;
                 }
             }, 500);
@@ -348,7 +350,7 @@ const quiz = function (index) {
 window.onload = () => {
     quiz(questionIndex);
     updateTimer();
+    console.log(counterWrong);
+    localStorage.setItem("wrongAnswers", counterWrong);
+    localStorage.setItem("correctAnswers", counterRight);
 };
-
-localStorage.setItem("wrongAnswers", counterWrong);
-localStorage.setItem("correctAnswers", counterRight);
