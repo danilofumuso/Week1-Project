@@ -81,6 +81,32 @@ const easy = [
   },
 ];
 
+const totalSeconds = 60;
+let remainingSeconds = totalSeconds;
+
+const secondsElement = document.getElementById("seconds");
+const progressCircle = document.querySelector(".progress-circle");
+
+const radius = 59;
+const circumference = 2 * Math.PI * radius;
+
+progressCircle.style.strokeDasharray = circumference;
+
+function updateTimer() {
+  secondsElement.innerText = remainingSeconds;
+
+  const offset = circumference - (remainingSeconds / totalSeconds) * circumference;
+  progressCircle.style.strokeDashoffset = offset;
+
+  if (remainingSeconds === 0) {
+    clearInterval(timerInterval);
+  } else {
+    remainingSeconds--;
+  }
+}
+
+let timerInterval = setInterval(updateTimer, 1000);
+
 let questionIndex = 0;
 let counterRight = 0;
 let counterWrong = 0;
@@ -117,25 +143,38 @@ const quiz = function (index) {
     buttonsDiv.appendChild(button);
 
     button.addEventListener("click", function () {
+      let timerInterval = setInterval(updateTimer, 1000);
+      clearInterval(timerInterval);
+      remainingSeconds = totalSeconds;
+      updateTimer();
+
       if (button.innerText === easy[index].correct_answer) {
         counterRight++;
         button.classList.add("green");
+        button.classList.remove("buttonHover");
         console.log("risposta corretta");
       } else {
         counterWrong++;
         button.classList.add("red");
+        button.classList.remove("buttonHover");
+
         console.log("risposta errata");
       }
-      if (questionIndex !== easy.length - 1) {
-        questionIndex++;
-        quiz(questionIndex);
-      } else {
-        console.log("passeremo ad un altra pagina");
-        return;
-      }
+
+      setTimeout(() => {
+        if (questionIndex !== easy.length - 1) {
+          questionIndex++;
+          quiz(questionIndex);
+        } else {
+          console.log("passeremo ad un altra pagina");
+          return;
+        }
+      }, 500);
     });
   }
 };
+
 window.onload = () => {
   quiz(questionIndex);
+  updateTimer();
 };
