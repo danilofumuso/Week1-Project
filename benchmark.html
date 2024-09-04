@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/benchmark.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="./assets/epicode_logo.png" alt="logo Epicode" />
+      </div>
+      <div class="timer">
+        <div class="svg-container">
+          <svg class="circle-svg" width="200" height="200">
+            <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
+            <circle class="progress-circle" cx="70" cy="70" r="60"></circle>
+          </svg>
+          <div class="time">
+            <p>SECONDS</p>
+            <span id="seconds">0</span>
+            <p>REMAINING</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div>
+        <h1 id="question"><br /><span></span></h1>
+      </div>
+      <section>
+        <div></div>
+      </section>
+      <div>
+        <h3 id="footer"></h3>
+      </div>
+    </main>
+    <script src="./JavaScript/benchmark.js"></script>
+  </body>
+</html>
