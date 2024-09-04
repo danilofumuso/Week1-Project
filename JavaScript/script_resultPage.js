@@ -1,7 +1,6 @@
-//let wrongAnswers = localStorage.getItem("wrongAnswers");
-//let correctAnswers = localStorage.getItem("correctAnswers");
-let wrongAnswers = 3;
-let correctAnswers = 6;
+let wrongAnswers = localStorage.getItem("wrongAnswers");
+let correctAnswers = localStorage.getItem("correctAnswers");
+
 let sumAnswers = wrongAnswers + correctAnswers;
 let numWrongQuestions = document.querySelector(".wrong > .questions");
 let numCorrectQuestions = document.querySelector(".correct > .questions");
