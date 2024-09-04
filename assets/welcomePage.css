@@ -100,7 +100,7 @@ div p {
   margin-top: 5rem;
 }
 .welcome-btn {
-  margin-left: 15rem;
+  margin-left: 30px;
   cursor: pointer;
   padding-inline: 60px;
   padding-block: 15px;
@@ -117,4 +117,65 @@ div p {
 button:active {
   transform: scale(0.95);
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3), 0 0 45px rgba(0, 255, 255, 0.2);
+}
+
+.violet-bg {
+  background-color: #d20094;
+  padding-inline: 30px;
+  margin-left: 0;
+  color: white;
+}
+
+.illuminated-violet {
+  background-color: #eb3eb7;
+  box-shadow: 0 0 10px rgb(210, 0, 148, 0.8), 0 0 20px rgb(210, 0, 148, 0.6), 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+#buttons {
+  margin-top: 40px;
+}
+
+#popup-style {
+  background-color: hsla(0, 0%, 100%, 0.2);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  width: 537px;
+  margin: 0 auto;
+  height: 280px;
+  padding: 24px;
+  transform: translate(0%, 60%);
+  border-radius: 10px;
+}
+
+.pupup-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.425);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.fa-times {
+  color: #d20094;
+}
+
+#icon-container {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+#confirm-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#confirm {
+  margin-left: 0;
+}
+
+.subtitle {
+  margin-bottom: 26px;
+  font-weight: 600;
 }

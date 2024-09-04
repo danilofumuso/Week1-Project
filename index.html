@@ -6,7 +6,14 @@
 
     <title>Document</title>
     <link rel="stylesheet" href="./assets/style.css" />
-    <link rel="stylesheet" href="./welcomePage.css" />
+    <link rel="stylesheet" href="./assets/welcomePage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div>
@@ -36,10 +43,28 @@
           <input type="checkbox" id="checkboxId" />
           <span class="checkmark"></span>
         </label>
-
-        <button id="proceedBtn" class="light-blue welcome-btn bold">proceed</button>
+        <div id="buttons">
+          <button id="difficultyBtn" class="violet-bg welcome-btn bold">Difficulty</button>
+          <button id="proceedBtn" class="light-blue welcome-btn bold">proceed</button>
+        </div>
+      </div>
+      <div class="pupup-container">
+        <div id="popup-style">
+          <div id="icon-container">
+            <i class="fas fa-times"></i>
+          </div>
+          <div>
+            <p class="subtitle">Pick a difficulty level for the questions:</p>
+          </div>
+          <button id="beginner" class="violet-bg welcome-btn illuminated-violet">Beginner</button>
+          <button id="intermediate" class="violet-bg welcome-btn">Intermediate</button>
+          <button id="advanced" class="violet-bg welcome-btn">Advanced</button>
+          <div id="confirm-container">
+            <button id="confirm" class="light-blue welcome-btn bold">Confirm</button>
+          </div>
+        </div>
       </div>
     </main>
-    <script src="./js-welcome-page.js"></script>
+    <script src="./JavaScript/js-welcome-page.js"></script>
   </body>
 </html>

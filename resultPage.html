@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="it">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ResultPage</title>
-        <link rel="stylesheet" href="./assets/style.css" />
-        <link rel="stylesheet" href="./assets/style_resultPage.css" />
-    </head>
-    <body>
-        <div>
-            <img src="./assets/epicode_logo.png" alt="logo Epicode" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResultPage</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/style_resultPage.css" />
+  </head>
+  <body>
+    <div>
+      <img src="./assets/epicode_logo.png" alt="logo Epicode" />
+    </div>
+    <main>
+      <h1 class="h1_results">Results</h1>
+      <h3 class="h3_results">The summary of your answers:</h3>
+      <div class="container_results">
+        <div class="correct">
+          <p class="WrongCorrect">Correct</p>
+          <p class="perc"></p>
+          <p class="questions">questions</p>
         </div>
-        <main>
-            <h1 class="h1_results">Results</h1>
-            <h3 class="h3_results">The summary of your answers:</h3>
-            <div class="container_results">
-                <div class="correct">
-                    <p class="WrongCorrect">Correct</p>
-                    <p class="perc"></p>
-                    <p class="questions">questions</p>
-                </div>
-                <div class="results">
-                    <div class="text">
-                        <h5 id="congratsSorry">Congratulations!</h5>
-                        <h5 class="test_cyan" id="pass">You passed the exam.</h5>
-                        <p>We'll send you the certificate in few minutes. <br />Check your email (including promotion / spam folder)</p>
-                    </div>
-                    <svg width="370" height="370" viewBox="5 5 40 40" style="position: relative">
-                        <!-- <svg>: Questo è l'elemento contenitore per le grafiche SVG.
+        <div class="results">
+          <div class="text">
+            <h5 id="congratsSorry">Congratulations!</h5>
+            <h5 class="test_cyan" id="pass">You passed the exam.</h5>
+            <p>We'll send you the certificate in few minutes. <br />Check your email (including promotion / spam folder)</p>
+          </div>
+          <svg width="370" height="370" viewBox="5 5 40 40" style="position: relative">
+            <!-- <svg>: Questo è l'elemento contenitore per le grafiche SVG.
                         width="370" e height="370": Imposta la larghezza e l'altezza dell'area di visualizzazione dell'SVG.
                         viewBox="5 5 40 40": Definisce l'area dell'SVG che deve essere visualizzata. 
                         Il viewBox è definito con quattro valori: min-x, min-y, width, e height.
                         Qui, viewBox indica che l'area visibile va da (5, 5) e ha una larghezza e altezza di 40 unità. -->
 
-                        <defs>
-                            <filter id="shadow" x="-20%" y="-20%" width="200%" height="200%">
-                                <feDropShadow dx="0" dy="0" stdDeviation="1.2" flood-color="black" flood-opacity="0.4" />
-                            </filter>
-                        </defs>
+            <defs>
+              <filter id="shadow" x="-20%" y="-20%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="0" stdDeviation="1.2" flood-color="black" flood-opacity="0.4" />
+              </filter>
+            </defs>
 
-                        <circle cx="25" cy="25" r="15.515" fill="none" stroke="#00FFFF" stroke-width="5.5" filter="url(#shadow)" />
-                        <!-- <circle>: Questo elemento disegna un cerchio.
+            <circle cx="25" cy="25" r="15.515" fill="none" stroke="#00FFFF" stroke-width="5.5" filter="url(#shadow)" />
+            <!-- <circle>: Questo elemento disegna un cerchio.
                         cx="25" e cy="25": Definiscono il centro del cerchio, rispettivamente lungo l'asse x e l'asse y.
                         r="15.515": Specifica il raggio del cerchio.
                         fill="none": Indica che il cerchio non ha riempimento; è trasparente all'interno.
@@ -49,29 +49,19 @@
                         stroke-dasharray="66.7, 33.3": Definisce le percentuali
                         stroke-dashoffset="26.5": Sposta il punto di inizio del segmento di cerchio rosa lungo il contorno. 
                          -->
-                        <circle
-                            id="dash"
-                            cx="25"
-                            cy="25"
-                            r="15.515"
-                            fill="none"
-                            stroke="#C2128D"
-                            stroke-width="5.5"
-                            stroke-dasharray=""
-                            stroke-dashoffset="26.5"
-                        />
-                    </svg>
-                </div>
-                <div class="wrong">
-                    <p class="WrongCorrect">Wrong</p>
-                    <p class="perc"></p>
-                    <p class="questions">questions</p>
-                </div>
-            </div>
-            <div class="button_conteiner">
-                <button class="button_style">rate us</button>
-            </div>
-        </main>
-        <script src="./assets/script_resultPage.js"></script>
-    </body>
+            <circle id="dash" cx="25" cy="25" r="15.515" fill="none" stroke="#C2128D" stroke-width="5.5" stroke-dasharray="" stroke-dashoffset="26.5" />
+          </svg>
+        </div>
+        <div class="wrong">
+          <p class="WrongCorrect">Wrong</p>
+          <p class="perc"></p>
+          <p class="questions">questions</p>
+        </div>
+      </div>
+      <div class="button_conteiner">
+        <button class="button_style">rate us</button>
+      </div>
+    </main>
+    <script src="./JavaScript/script_resultPage.js"></script>
+  </body>
 </html>
