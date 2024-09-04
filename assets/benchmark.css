@@ -58,3 +58,11 @@ button {
   font-family: inherit;
   font-weight: 500;
 }
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}

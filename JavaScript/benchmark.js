@@ -77,13 +77,13 @@ const easy = [
     category: "Science: Computers",
     question: "Pointers were not used in the original C programming language; they were added later on in C++.",
     correct_answer: "False",
-    incorrect_answers: ["True", "nessuna della 2", "entrambe"],
+    incorrect_answers: ["True"],
   },
 ];
 
 let questionIndex = 0;
-// let counterGiuste;
-// let counterSabgliate;
+let counterRight = 0;
+let counterWrong = 0;
 
 const quiz = function (index) {
   const questions = document.getElementById("question");
@@ -117,6 +117,15 @@ const quiz = function (index) {
     buttonsDiv.appendChild(button);
 
     button.addEventListener("click", function () {
+      if (button.innerText === easy[index].correct_answer) {
+        counterRight++;
+        button.classList.add("green");
+        console.log("risposta corretta");
+      } else {
+        counterWrong++;
+        button.classList.add("red");
+        console.log("risposta errata");
+      }
       if (questionIndex !== easy.length - 1) {
         questionIndex++;
         quiz(questionIndex);
@@ -130,46 +139,3 @@ const quiz = function (index) {
 window.onload = () => {
   quiz(questionIndex);
 };
-
-// let counterIndiceDomande = 0;
-// let counterGiuste = 0;
-// let counterSabgliate = 0;
-
-//
-//   console.log(titoloDomanda);
-
-//     btn.innerText = risposteTotali[i];
-
-//     divDeiBottoni.appendChild(btn);
-//     btn.addEventListener("click", function () {
-//       if (counterIndiceDomande !== easy.length - 1) {
-//         counterIndiceDomande++;
-//         generaDomanda(counterIndiceDomande);
-//       } else {
-//         console.log("passeremo ad un altra pagina");
-//         return; //?? andrà avanti con la pagina e non conterà più?
-//       }
-//       if (i === 0) {
-//         counterGiuste++;
-//         console.log("risposta corretta");
-//       } else {
-//         counterSabgliate++;
-//         console.log("risposta errata");
-
-//         {
-//           //???????
-//         }
-//       }
-
-//       console.log(counterGiuste);
-//       console.log(counterSabgliate);
-//     });
-//     //domanda giusta o domanda sbagliata
-//   }
-// };
-
-// window.onload = () => {
-//   generaDomanda(counterIndiceDomande);
-// };
-
-// Invia un messaggio in Team-2
