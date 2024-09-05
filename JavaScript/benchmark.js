@@ -261,24 +261,34 @@ const circumference = 2 * Math.PI * radius;
 
 progressCircle.style.strokeDasharray = circumference;
 
-function updateTimer() {
-  secondsElement.innerText = remainingSeconds;
-
-  const offset = circumference - (remainingSeconds / totalSeconds) * circumference;
-  progressCircle.style.strokeDashoffset = offset;
-
-  if (remainingSeconds === 0) {
-    clearInterval(timerInterval);
-  } else {
-    remainingSeconds--;
-  }
-}
-
-let timerInterval = setInterval(updateTimer, 1000);
-
 let questionIndex = 0;
 let counterRight = 0;
 let counterWrong = 0;
+
+function updateTimer() {
+  if (remainingSeconds === -1) {
+    console.log("tempo scaduto ");
+    counterWrong++;
+    remainingSeconds = totalSeconds;
+
+    if (questionIndex !== array.length - 1) {
+      questionIndex++;
+      quiz(questionIndex);
+    } else {
+      localStorage.setItem("wrongAnswers", counterWrong);
+      localStorage.setItem("correctAnswers", counterRight);
+      window.location.href = "resultPage.html";
+    }
+  } else {
+    secondsElement.innerText = remainingSeconds;
+
+    const offset = circumference - (remainingSeconds / totalSeconds) * circumference;
+    progressCircle.style.strokeDashoffset = offset;
+    remainingSeconds--;
+  }
+}
+console.log(questionIndex);
+let timerInterval = setInterval(updateTimer, 1000);
 
 if (value === "easy") {
   array = easy;
@@ -298,7 +308,7 @@ const quiz = function (index) {
   questionNumber.innerText = "QUESTION " + [index + 1];
   const span = document.createElement("span");
   span.className = "light-violet";
-  span.innerText = " / 10";
+  span.innerText = " / " + array.length;
   questionNumber.appendChild(span);
 
   const totalAnswers = [array[index].correct_answer, ...array[index].incorrect_answers];
