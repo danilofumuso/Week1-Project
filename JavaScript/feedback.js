@@ -39,18 +39,18 @@ function redirectToEpicode() {
 }
 
 const button = document.getElementById("info");
+
 button.onclick = function () {
   if (input.value !== "" && condition) {
-    input.addEventListener("keypress", function (event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-
-        button.click();
-        redirectToEpicode();
-      }
-    });
     redirectToEpicode();
   } else {
     alert("Please select a rating and enter a comment");
   }
 };
+
+input.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" && input.value !== "" && condition) {
+    event.preventDefault();
+    redirectToEpicode();
+  }
+});
