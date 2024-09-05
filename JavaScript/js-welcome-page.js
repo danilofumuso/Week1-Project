@@ -21,13 +21,15 @@ diffBtn.addEventListener("click", function () {
   popup.style.display = "block";
 });
 
-exitBtn.addEventListener("click", function () {
+exitBtn.addEventListener("click", function (difficulty) {
   const popup = document.querySelector(".pupup-container");
   popup.style.display = "none";
   beginnerBtn.classList.remove("illuminated-violet");
   intermediateBtn.classList.remove("illuminated-violet");
   advancedBtn.classList.remove("illuminated-violet");
   difficulty = "easy";
+  localStorage.removeItem("difficulty");
+  localStorage.setItem("difficulty", difficulty);
 });
 
 confirmBtn.addEventListener("click", function () {
@@ -35,31 +37,37 @@ confirmBtn.addEventListener("click", function () {
   popup.style.display = "none";
 });
 
-beginnerBtn.addEventListener("click", function () {
+beginnerBtn.addEventListener("click", function (difficulty) {
   beginnerBtn.classList.add("illuminated-violet");
   if (beginnerBtn.classList.contains("illuminated-violet")) {
     intermediateBtn.classList.remove("illuminated-violet");
     advancedBtn.classList.remove("illuminated-violet");
   }
   difficulty = "easy";
+  localStorage.removeItem("difficulty");
+  localStorage.setItem("difficulty", difficulty);
 });
 
-intermediateBtn.addEventListener("click", function () {
+intermediateBtn.addEventListener("click", function (difficulty) {
   intermediateBtn.classList.add("illuminated-violet");
   if (intermediateBtn.classList.contains("illuminated-violet")) {
     beginnerBtn.classList.remove("illuminated-violet");
     advancedBtn.classList.remove("illuminated-violet");
   }
   difficulty = "medium";
+  localStorage.removeItem("difficulty");
+  localStorage.setItem("difficulty", difficulty);
 });
 
-advancedBtn.addEventListener("click", function () {
+advancedBtn.addEventListener("click", function (difficulty) {
   advancedBtn.classList.add("illuminated-violet");
   if (advancedBtn.classList.contains("illuminated-violet")) {
     beginnerBtn.classList.remove("illuminated-violet");
     intermediateBtn.classList.remove("illuminated-violet");
   }
   difficulty = "hard";
+  localStorage.removeItem("difficulty");
+  localStorage.setItem("difficulty", difficulty);
 });
 
 //funzione quando checcki la check-box fa illuminare il tasto
@@ -75,7 +83,7 @@ function updateButtonState() {
 checkBox.addEventListener("change", updateButtonState);
 
 //funzione che collega il bottone(onclick) per cambiare pagina
-
+console.log(localStorage);
 function nextPage() {
   btn.addEventListener("click", function () {
     window.location.href = "paginadiprova.html";
