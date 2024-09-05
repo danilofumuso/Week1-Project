@@ -29,6 +29,7 @@ for (let i = 0; i < stars.length; i++) {
 
 window.onload = function () {
     document.getElementById("comment").value = "";
+    console.log(storage);
 };
 
 const input = document.getElementById("comment");

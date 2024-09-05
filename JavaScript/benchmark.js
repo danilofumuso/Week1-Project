@@ -1,5 +1,5 @@
 let value = localStorage.getItem("difficulty");
-
+console.log(value);
 const easy = [
     {
         type: "multiple",

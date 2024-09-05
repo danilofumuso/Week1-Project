@@ -22,3 +22,8 @@ if (perCorr.toFixed() < 60) {
     let p = document.querySelector(".text > p");
     p.innerText = "Try again when you are more prepared";
 }
+let btn = document.querySelector("button");
+
+btn.addEventListener("click", function () {
+    window.location.href = "feedback.html";
+});
