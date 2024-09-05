@@ -1,5 +1,6 @@
 let value = localStorage.getItem("difficulty");
 console.log(value);
+
 const easy = [
   {
     type: "multiple",
@@ -279,19 +280,15 @@ let questionIndex = 0;
 let counterRight = 0;
 let counterWrong = 0;
 
-let selectedArray = [];
+if (value === "easy") {
+  array = easy;
+} else if (value === "medium") {
+  array = medium;
+} else {
+  array = hard;
+}
 
-const arrayChoice = function () {
-  if (value === "easy") {
-    selectedArray = easy;
-  } else if (value === "medium") {
-    selectedArray = medium;
-  } else {
-    selectedArray = hard;
-  }
-};
-
-const quiz = function (array, index) {
+const quiz = function (index) {
   const questions = document.getElementById("question");
   const buttonsDiv = document.querySelector("section>div");
   buttonsDiv.innerHTML = "";
@@ -363,7 +360,6 @@ const quiz = function (array, index) {
 };
 
 window.onload = () => {
-  arrayChoice();
-  quiz(selectedArray, questionIndex);
+  quiz(questionIndex);
   updateTimer();
 };

@@ -86,9 +86,8 @@ checkBox.addEventListener("change", updateButtonState);
 console.log(localStorage);
 function nextPage() {
   btn.addEventListener("click", function () {
-    window.location.href = "paginadiprova.html";
     if (btn.classList.contains("illuminated")) {
-      window.location.href = "paginadiprova.html";
+      window.location.href = "benchmark.html";
     }
   });
 }
