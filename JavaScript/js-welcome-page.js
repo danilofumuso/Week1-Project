@@ -17,59 +17,59 @@ let difficulty = "easy";
 localStorage.setItem("difficulty", difficulty);
 
 diffBtn.addEventListener("click", function () {
-    const popup = document.querySelector(".pupup-container");
-    popup.style.display = "block";
+  const popup = document.querySelector(".pupup-container");
+  popup.style.display = "block";
 });
 
 exitBtn.addEventListener("click", function () {
-    const popup = document.querySelector(".pupup-container");
-    popup.style.display = "none";
-    beginnerBtn.classList.remove("illuminated-violet");
-    intermediateBtn.classList.remove("illuminated-violet");
-    advancedBtn.classList.remove("illuminated-violet");
-    difficulty = "easy";
+  const popup = document.querySelector(".pupup-container");
+  popup.style.display = "none";
+  beginnerBtn.classList.remove("illuminated-violet");
+  intermediateBtn.classList.remove("illuminated-violet");
+  advancedBtn.classList.remove("illuminated-violet");
+  difficulty = "easy";
 });
 
 confirmBtn.addEventListener("click", function () {
-    const popup = document.querySelector(".pupup-container");
-    popup.style.display = "none";
+  const popup = document.querySelector(".pupup-container");
+  popup.style.display = "none";
 });
 
 beginnerBtn.addEventListener("click", function () {
-    beginnerBtn.classList.add("illuminated-violet");
-    if (beginnerBtn.classList.contains("illuminated-violet")) {
-        intermediateBtn.classList.remove("illuminated-violet");
-        advancedBtn.classList.remove("illuminated-violet");
-    }
-    difficulty = "easy";
+  beginnerBtn.classList.add("illuminated-violet");
+  if (beginnerBtn.classList.contains("illuminated-violet")) {
+    intermediateBtn.classList.remove("illuminated-violet");
+    advancedBtn.classList.remove("illuminated-violet");
+  }
+  difficulty = "easy";
 });
 
 intermediateBtn.addEventListener("click", function () {
-    intermediateBtn.classList.add("illuminated-violet");
-    if (intermediateBtn.classList.contains("illuminated-violet")) {
-        beginnerBtn.classList.remove("illuminated-violet");
-        advancedBtn.classList.remove("illuminated-violet");
-    }
-    difficulty = "medium";
+  intermediateBtn.classList.add("illuminated-violet");
+  if (intermediateBtn.classList.contains("illuminated-violet")) {
+    beginnerBtn.classList.remove("illuminated-violet");
+    advancedBtn.classList.remove("illuminated-violet");
+  }
+  difficulty = "medium";
 });
 
 advancedBtn.addEventListener("click", function () {
-    advancedBtn.classList.add("illuminated-violet");
-    if (advancedBtn.classList.contains("illuminated-violet")) {
-        beginnerBtn.classList.remove("illuminated-violet");
-        intermediateBtn.classList.remove("illuminated-violet");
-    }
-    difficulty = "hard";
+  advancedBtn.classList.add("illuminated-violet");
+  if (advancedBtn.classList.contains("illuminated-violet")) {
+    beginnerBtn.classList.remove("illuminated-violet");
+    intermediateBtn.classList.remove("illuminated-violet");
+  }
+  difficulty = "hard";
 });
 
 //funzione quando checcki la check-box fa illuminare il tasto
 
 function updateButtonState() {
-    if (checkBox.checked) {
-        btn.classList.add("illuminated");
-    } else {
-        btn.classList.remove("illuminated");
-    }
+  if (checkBox.checked) {
+    btn.classList.add("illuminated");
+  } else {
+    btn.classList.remove("illuminated");
+  }
 }
 
 checkBox.addEventListener("change", updateButtonState);
@@ -77,14 +77,14 @@ checkBox.addEventListener("change", updateButtonState);
 //funzione che collega il bottone(onclick) per cambiare pagina
 
 function nextPage() {
-    btn.addEventListener("click", function () {
-        /* window.location.href = "paginadiprova.html"; */
-        if (btn.classList.contains("illuminated")) {
-            window.location.href = "benchmark.html";
-        }
-    });
+  btn.addEventListener("click", function () {
+    window.location.href = "paginadiprova.html";
+    if (btn.classList.contains("illuminated")) {
+      window.location.href = "paginadiprova.html";
+    }
+  });
 }
 nextPage();
 window.onload = () => {
-    updateButtonState();
+  updateButtonState();
 };
