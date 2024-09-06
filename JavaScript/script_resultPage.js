@@ -3,11 +3,7 @@ const myArray = localStorage.getItem("array");
 const array = myArray ? JSON.parse(myArray) : [];
 
 const usersAnswer = localStorage.getItem("answersChecked");
-const answersChecked = usersAnswer ? JSON.parse(usersAnswer) : [];
-console.log(answersChecked);
-//cosi si riconverte la stringa nell'array
-
-console.log(array);
+const answersChecked = usersAnswer ? JSON.parse(usersAnswer) : []; //cosi si riconverte la stringa nell'array
 
 let wrongAnswers = parseInt(localStorage.getItem("wrongAnswers"));
 let correctAnswers = parseInt(localStorage.getItem("correctAnswers"));
@@ -23,7 +19,7 @@ let perWr = (100 * wrongAnswers) / sumAnswers;
 percCorrect.innerText = perCorr.toFixed(1) + "%";
 percWrong.innerText = perWr.toFixed(1) + "%";
 let donut = document.getElementById("dash");
-console.log(donut);
+
 donut.setAttribute("stroke-dasharray", `${perWr.toFixed(1)}, ${perCorr.toFixed(1)}`);
 if (perCorr.toFixed() < 60) {
   let title = document.getElementById("congratsSorry");
@@ -72,7 +68,6 @@ const getResult = function () {
     if (answersChecked[j] === totalAnswers[0]) {
       const giusta = answersContainer.firstElementChild;
       giusta.classList.add("illuminated-violet");
-      console.log(answersChecked[j]);
     } else {
       // Risposte sbagliate (tutte tranne la prima)
       const sbagliate = Array.from(answersContainer.querySelectorAll("li"));
@@ -88,8 +83,6 @@ const getResult = function () {
           sbagliata.appendChild(error);
         }
       });
-
-      console.log(answersChecked[j]);
     }
   }
 };

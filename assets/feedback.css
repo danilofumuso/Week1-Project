@@ -25,10 +25,6 @@ main p {
   fill: rgb(19 26 93);
 }
 
-/* .star:hover {
-  fill: #00ffff;
-} */
-
 .star.selected {
   fill: #00ffff;
 }

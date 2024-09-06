@@ -1,5 +1,4 @@
 let value = localStorage.getItem("difficulty");
-console.log(value);
 
 const easy = [
   {
@@ -389,7 +388,6 @@ let counterWrong = 0;
 
 function updateTimer() {
   if (remainingSeconds === -1) {
-    console.log("tempo scaduto ");
     counterWrong++;
     answersClicked.push("");
     remainingSeconds = totalSeconds;
@@ -411,7 +409,7 @@ function updateTimer() {
     remainingSeconds--;
   }
 }
-console.log(questionIndex);
+
 let timerInterval = setInterval(updateTimer, 1000);
 
 if (value === "easy") {
@@ -461,7 +459,6 @@ const quiz = function (index) {
     button.addEventListener("click", function () {
       answersClicked.push(button.innerText);
       localStorage.setItem("answersChecked", JSON.stringify(answersClicked));
-      console.log(answersClicked);
 
       const buttons = document.querySelectorAll("button"); //questo disabilita i bottoni dopo il primo click
       buttons.forEach((button) => (button.disabled = true));
@@ -476,14 +473,10 @@ const quiz = function (index) {
         counterRight++;
         button.classList.add("green");
         button.classList.remove("buttonHover");
-
-        console.log("risposta corretta");
       } else {
         counterWrong++;
         button.classList.add("red");
         button.classList.remove("buttonHover");
-
-        console.log("risposta errata");
       }
 
       localStorage.setItem("wrongAnswers", counterWrong);
