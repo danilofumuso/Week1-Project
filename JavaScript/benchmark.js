@@ -391,6 +391,7 @@ function updateTimer() {
   if (remainingSeconds === -1) {
     console.log("tempo scaduto ");
     counterWrong++;
+    answersClicked.push("");
     remainingSeconds = totalSeconds;
 
     if (questionIndex !== array.length - 1) {
@@ -399,6 +400,7 @@ function updateTimer() {
     } else {
       localStorage.setItem("wrongAnswers", counterWrong);
       localStorage.setItem("correctAnswers", counterRight);
+      localStorage.setItem("answersChecked", JSON.stringify(answersClicked));
       window.location.href = "resultPage.html";
     }
   } else {

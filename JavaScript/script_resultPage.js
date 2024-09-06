@@ -26,61 +26,74 @@ let donut = document.getElementById("dash");
 console.log(donut);
 donut.setAttribute("stroke-dasharray", `${perWr.toFixed(1)}, ${perCorr.toFixed(1)}`);
 if (perCorr.toFixed() < 60) {
-    let title = document.getElementById("congratsSorry");
-    title.innerText = "Sorry!";
-    let cyanTitle = document.getElementById("pass");
-    cyanTitle.innerText = "You didn't pass the exam";
-    let p = document.querySelector(".text > p");
-    p.innerText = "Try again when you are more prepared";
+  let title = document.getElementById("congratsSorry");
+  title.innerText = "Sorry!";
+  let cyanTitle = document.getElementById("pass");
+  cyanTitle.innerText = "You didn't pass the exam";
+  let p = document.querySelector(".text > p");
+  p.innerText = "Try again when you are more prepared";
 }
 let btn = document.querySelector("button");
 
 btn.addEventListener("click", function () {
-    window.location.href = "feedback.html";
+  window.location.href = "feedback.html";
 });
 
 const answersFb = document.getElementById("answers-feedback");
 
 const getResult = function () {
-    // Ciclo per ogni domanda
-    for (let j = 0; j < array.length; j++) {
-        const totalAnswers = [array[j].correct_answer, ...array[j].incorrect_answers];
-        const titleQuestion = document.createElement("p");
-        const answersContainer = document.createElement("ul");
+  // Ciclo per ogni domanda
+  for (let j = 0; j < array.length; j++) {
+    const totalAnswers = [array[j].correct_answer, ...array[j].incorrect_answers];
+    const titleQuestion = document.createElement("p");
+    const answersContainer = document.createElement("ul");
 
-        titleQuestion.innerText = array[j].question;
-        answersFb.appendChild(titleQuestion);
-        answersFb.appendChild(answersContainer);
+    titleQuestion.innerText = array[j].question;
+    answersFb.appendChild(titleQuestion);
+    answersFb.appendChild(answersContainer);
 
-        // Ciclo per le risposte
-        for (let i = 0; i < totalAnswers.length; i++) {
-            const answers = document.createElement("li");
-            answers.innerText = totalAnswers[i];
-            answersContainer.appendChild(answers);
-        }
-
-        // Se la risposta dell'utente è corretta
-        if (answersChecked[j] === totalAnswers[0]) {
-            const giusta = answersContainer.firstElementChild;
-            giusta.style.color = "green";
-            console.log(answersChecked[j]);
-        } else {
-            // Risposte sbagliate (tutte tranne la prima)
-            const sbagliate = Array.from(answersContainer.querySelectorAll("li"));
-            sbagliate.shift();
-
-            // Colore rosso per le risposte sbagliate
-            sbagliate.forEach((sbagliata) => {
-                if (sbagliata.innerText === answersChecked[j]) {
-                    sbagliata.style.color = "red";
-                }
-            });
-
-            console.log(answersChecked[j]);
-        }
+    // Ciclo per le risposte
+    for (let i = 0; i < totalAnswers.length; i++) {
+      const answers = document.createElement("li");
+      answers.innerText = totalAnswers[i] + " ";
+      answersContainer.appendChild(answers);
     }
+
+    if (totalAnswers[0]) {
+      const giusta = answersContainer.firstElementChild;
+      const check = document.createElement("i");
+      check.style.color = "green";
+      check.className = "fa-solid fa-check";
+
+      giusta.appendChild(check);
+    }
+
+    // Se la risposta dell'utente è corretta
+    if (answersChecked[j] === totalAnswers[0]) {
+      const giusta = answersContainer.firstElementChild;
+      giusta.classList.add("illuminated-violet");
+      console.log(answersChecked[j]);
+    } else {
+      // Risposte sbagliate (tutte tranne la prima)
+      const sbagliate = Array.from(answersContainer.querySelectorAll("li"));
+      sbagliate.shift();
+
+      // Colore rosso per le risposte sbagliate
+      sbagliate.forEach((sbagliata) => {
+        if (sbagliata.innerText === answersChecked[j]) {
+          const error = document.createElement("i");
+          error.style.color = "red";
+          error.className = "fa-solid fa-xmark";
+          sbagliata.classList.add("illuminated-violet");
+          sbagliata.appendChild(error);
+        }
+      });
+
+      console.log(answersChecked[j]);
+    }
+  }
 };
 
 window.onload = () => {
-    getResult();
+  getResult();
 };
