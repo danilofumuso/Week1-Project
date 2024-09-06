@@ -26,64 +26,61 @@ let donut = document.getElementById("dash");
 console.log(donut);
 donut.setAttribute("stroke-dasharray", `${perWr.toFixed(1)}, ${perCorr.toFixed(1)}`);
 if (perCorr.toFixed() < 60) {
-  let title = document.getElementById("congratsSorry");
-  title.innerText = "Sorry!";
-  let cyanTitle = document.getElementById("pass");
-  cyanTitle.innerText = "You didn't pass the exam";
-  let p = document.querySelector(".text > p");
-  p.innerText = "Try again when you are more prepared";
+    let title = document.getElementById("congratsSorry");
+    title.innerText = "Sorry!";
+    let cyanTitle = document.getElementById("pass");
+    cyanTitle.innerText = "You didn't pass the exam";
+    let p = document.querySelector(".text > p");
+    p.innerText = "Try again when you are more prepared";
 }
 let btn = document.querySelector("button");
 
 btn.addEventListener("click", function () {
-  window.location.href = "feedback.html";
+    window.location.href = "feedback.html";
 });
 
 const answersFb = document.getElementById("answers-feedback");
 
 const getResult = function () {
-  //dentro un for creiamo le p con le domande e le ul
-  for (let j = 0; j < array.length; j++) {
-    const totalAnswers = [array[j].correct_answer, ...array[j].incorrect_answers];
-    const titleQuestion = document.createElement("p");
-    const answersContainer = document.createElement("ul");
-    titleQuestion.innerText = array[j].question;
-    answersFb.appendChild(titleQuestion);
-    answersFb.appendChild(answersContainer);
-    for (let i = 0; i < totalAnswers.length; i++) {
-      const answers = document.createElement("li");
+    // Ciclo per ogni domanda
+    for (let j = 0; j < array.length; j++) {
+        const totalAnswers = [array[j].correct_answer, ...array[j].incorrect_answers];
+        const titleQuestion = document.createElement("p");
+        const answersContainer = document.createElement("ul");
 
-      // .className = "";
-      answers.innerText = totalAnswers[i];
-      answersContainer.appendChild(answers);
+        titleQuestion.innerText = array[j].question;
+        answersFb.appendChild(titleQuestion);
+        answersFb.appendChild(answersContainer);
+
+        // Ciclo per le risposte
+        for (let i = 0; i < totalAnswers.length; i++) {
+            const answers = document.createElement("li");
+            answers.innerText = totalAnswers[i];
+            answersContainer.appendChild(answers);
+        }
+
+        // Se la risposta dell'utente è corretta
+        if (answersChecked[j] === totalAnswers[0]) {
+            const giusta = answersContainer.firstElementChild;
+            giusta.style.color = "green";
+            console.log(answersChecked[j]);
+        } else {
+            // Risposte sbagliate (tutte tranne la prima)
+            const sbagliate = Array.from(answersContainer.querySelectorAll("li"));
+            sbagliate.shift();
+
+            // Colore rosso per le risposte sbagliate
+            sbagliate.forEach((sbagliata) => {
+                if (sbagliata.innerText === answersChecked[j]) {
+                    sbagliata.style.color = "red";
+                }
+            });
+
+            console.log(answersChecked[j]);
+        }
     }
-
-    // for (let i = 0; i < answersChecked.length; i++) {
-    //   if (answersChecked[j] === totalAnswers[i]) {
-    //     const usersAnswersIlluminated = document.querySelectorAll("li");
-    //     usersAnswersIlluminated.style.color = "blue";
-    //   }
-    // }
-
-    if (answersChecked[j] === totalAnswers[0]) {
-      const giusta = answersContainer.firstElementChild;
-      giusta.style.color = "green";
-      console.log(answersChecked[j]);
-    } else if (answersChecked[j] === totalAnswers[(1, 2, 3)]) {
-      const coloraDiRosso = totalAnswers[(1, 2, 3)].innerText;
-      coloraDiRosso.style.color = "red";
-      // const sbagliate = Array.from(answersContainer.querySelectorAll("li"));
-      // sbagliate.shift();
-      // // sbagliate.forEach((sbagliata) => {})
-      //   sbagliata.style.color = "red";
-
-      console.log(answersChecked[j]);
-    }
-  }
 };
 
 window.onload = () => {
-  getResult();
+    getResult();
 };
-
-//creiamo la lista per le risposte
