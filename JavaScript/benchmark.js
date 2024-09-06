@@ -389,7 +389,7 @@ let counterWrong = 0;
 function updateTimer() {
   if (remainingSeconds === -1) {
     counterWrong++;
-    answersClicked.push("");
+    answersClicked.push(null);
     remainingSeconds = totalSeconds;
 
     if (questionIndex !== array.length - 1) {
