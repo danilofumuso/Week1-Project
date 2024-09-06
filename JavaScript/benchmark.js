@@ -370,6 +370,8 @@ const hard = [
   },
 ];
 
+let answersClicked = [];
+
 const totalSeconds = 60; // funzionamento del timer
 let remainingSeconds = totalSeconds;
 
@@ -412,11 +414,16 @@ let timerInterval = setInterval(updateTimer, 1000);
 
 if (value === "easy") {
   array = easy;
+  localStorage.setItem("array", JSON.stringify(easy));
 } else if (value === "medium") {
   array = medium;
+  localStorage.setItem("array", JSON.stringify(medium));
 } else {
   array = hard;
+  localStorage.setItem("array", JSON.stringify(hard));
 }
+
+//per convertire un array in una stringa nella pagina bench
 
 const quiz = function (index) {
   const questions = document.getElementById("question");
@@ -450,6 +457,10 @@ const quiz = function (index) {
     buttonsDiv.appendChild(button);
 
     button.addEventListener("click", function () {
+      answersClicked.push(button.innerText);
+      localStorage.setItem("answersChecked", JSON.stringify(answersClicked));
+      console.log(answersClicked);
+
       const buttons = document.querySelectorAll("button"); //questo disabilita i bottoni dopo il primo click
       buttons.forEach((button) => (button.disabled = true));
 
@@ -463,6 +474,7 @@ const quiz = function (index) {
         counterRight++;
         button.classList.add("green");
         button.classList.remove("buttonHover");
+
         console.log("risposta corretta");
       } else {
         counterWrong++;
